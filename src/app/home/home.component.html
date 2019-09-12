@@ -1,0 +1,58 @@
+<h1>DATA BINDING</h1>
+<h2>One-way binding</h2>
+<h3>1.interpolation and 2.property binding</h3>
+<p>
+    GOOD MORNING 
+    {{title}}
+</p>
+<h1 [innerHTML]="name"></h1>
+<img [src]="image" class="lam">
+<h1>3.Event binding</h1>
+<button type="button" (click)="toggleMe()" [disabled]="isDisabled">Click me!!</button>
+<br>
+<h1>Two way binding</h1>
+<input type="text" [(ngModel)]="names"/>
+<p>Hello {{names}}</p>
+<br>
+<h1>structural directives</h1>
+<h2>Usage of ngif, ngfor and ngswitchcase </h2>
+<br>
+<h3 *ngIf="display; else elsecontent">display the code</h3>
+<ng-template #elsecontent>
+    <h3>display for else code</h3>
+</ng-template>
+<br>
+<h1 *ngFor="let student of students; index as i; first as f; last as l; even as e; odd as o">
+    <h2>{{i}} {{f}} {{l}} {{student}} {{e}} {{o}}</h2>
+</h1>
+<br>
+<h1>ngswitchcase directive</h1>
+<div [ngSwitch]="car">
+    <div *ngSwitchCase="'BMW'"><strong>picked BMW..!</strong></div>
+    <div *ngSwitchCase="'BENZ'">You picked BENZ..!</div>
+    <div *ngSwitchCase="'AUDI'">You picked AUDI..!</div>
+    <div *ngSwitchCase="'FERRARI'">You picked FERRARI..!</div>
+    <div *ngSwitchCase="'LAMBO'">You picked LAMBO..!</div>
+    <div *ngSwitchCase="'RANGEROVER'">You picked RANGEROVER..!</div>
+    <div *ngSwitchCase="'PORCHE'">You picked PORCHE..!</div>
+    <div *ngSwitchDefault>picked again please..!</div>
+</div>
+<br>
+<h1>BUILT IN PIPES</h1>
+<p>this is lowercase pipe {{"HELLO BANGALORE" | lowercase}}</p>
+<br>
+<p>this is uppercase pipe {{"hello karthik" | uppercase}}</p>
+<br>
+<p>this is DATE pipe {{ todayDate | date: "full"}}</p>
+<br>
+<p>this is currency pipe {{ 85 | currency: "USD"}}</p>
+<br>
+<p>this is number pipe {{ 9046.980345 | number: "1.2-4"}}</p>
+<br>
+<p>this is percentage pipe {{ 0.5368 | percent}}</p>
+<br>
+<h1>custom pipes</h1>
+<p>this s sqrt pipe {{ 16 | sqrt }}</p>
+
+
+
